@@ -1,19 +1,47 @@
 import { Router } from 'express'
-import { Movie } from '../models/Movie'
+import mongoose from 'mongoose';
+import { Movie, IMovie } from '../models/Movie'
 
 const router = Router()
+// CREAR: Agregar una nueva película
+const addMovie = async (newMovie: object) => {
+  try {
+    const movie: IMovie = new Movie(newMovie)
+    return await movie.save()
+  } catch (error) {
+    console.log("Error al agregar película X")
+  }
+}
 
-// Obtener todas las películas
-router.get('/', async (_req, res) => {
-  const movies = await Movie.find()
-  res.json(movies)
-})
+//READ I: Obtener todas las películas
+const getMovies = async () => {
+  try {
+    const movies = await Movie.find()
+    return movies
+  } catch (error) {
+    console.log("Error al buscar las películas X")
+  }
+}
 
-// Agregar una nueva película
-router.post('/', async (req, res) => {
-  const nuevaPeli = new Movie(req.body)
-  await nuevaPeli.save()
-  res.status(201).json(nuevaPeli)
-})
+//READ II: Obtener 1 película (por su ID)
+const getMovieById = async (id: string) => {
+  try {
+    const movie = await Movie.findById(id);
+
+    if (!movie) {
+      console.log("No existe la película X");
+    } else {
+      console.log(movie);
+    }
+  } catch (error) {
+    console.log("Error al buscar la película X");
+  }
+};
+
+//UPDATE: Actualizar una película
+
+
+//DELETE: Eliminar una película (por su ID)
+
 
 export default router
