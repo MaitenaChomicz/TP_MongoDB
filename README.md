@@ -28,34 +28,35 @@ TP-MONGO/
 ├── package.json 
 ├── tsconfig.json 
 └── README.md
-
+```
 
 ## 🎥 Entidad: Película
 
 El modelo de película incluye los siguientes campos:
-
+```
 - `titulo`: string  
 - `director`: string  
 - `anio`: number  
 - `duracion`: number  
 - `genero`: string  
 - `calificacion`: number  
-
+```
 ## ⚙️ Cómo ejecutar el proyecto
 
 1. Cloná el repositorio:
    ```
-   git clone https://github.com/tu-usuario/tu-repo.git
+   git clone https://github.com/MaitenaChomicz/TP_MongoDB
    cd tu-repo
-
+   ```
 2. Instalá las dependencias:
    ```
    npm install
-
+   ```
 3. Configurá tu conexión a MongoDB en el archivo .env, por ejemplo:
    ```
    MONGO_URI=mongodb://localhost:27017/tp-peliculas
-
+   ```
 4. Ejecutá las funciones de prueba con:
    ```
    npx ts-node tests/movies.test.ts
+   ```
