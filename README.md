@@ -44,18 +44,18 @@ El modelo de película incluye los siguientes campos:
 ## ⚙️ Cómo ejecutar el proyecto
 
 1. Cloná el repositorio:
-   ```bash
+   ```
    git clone https://github.com/tu-usuario/tu-repo.git
    cd tu-repo
 
 2. Instalá las dependencias:
-   ```bash
+   ```
    npm install
 
 3. Configurá tu conexión a MongoDB en el archivo .env, por ejemplo:
-   ```bash
+   ```
    MONGO_URI=mongodb://localhost:27017/tp-peliculas
 
 4. Ejecutá las funciones de prueba con:
-   ```bash
+   ```
    npx ts-node tests/movies.test.ts
