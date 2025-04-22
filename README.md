@@ -54,7 +54,7 @@ El modelo de película incluye los siguientes campos:
    ```
 3. Configurá tu conexión a MongoDB en el archivo .env, por ejemplo:
    ```
-   MONGO_URI=mongodb://localhost:27017/tp-peliculas
+   MONGO_URI=mongodb://localhost:27017/TP_MongoMovies
    ```
 4. Ejecutá las funciones de prueba con:
    ```
