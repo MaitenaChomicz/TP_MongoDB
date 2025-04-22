@@ -39,9 +39,19 @@ const getMovieById = async (id: string) => {
 };
 
 //UPDATE: Actualizar una película
-
+const updateMovieById = async (id: string) => {
+  const updatedMovie = await Movie.findByIdAndUpdate(
+    id,
+    { calificacion: 10 },
+    { new: true }
+  );
+  console.log(" Calificación actualizada:", updatedMovie);
+};
 
 //DELETE: Eliminar una película (por su ID)
-
+const deleteMovie = async (id: string) => {
+  const deletedMovie = await Movie.findByIdAndDelete(id);
+  console.log(" Pelicúla eliminada:", deletedMovie);
+};
 
 export default router
