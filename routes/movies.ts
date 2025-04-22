@@ -1,15 +1,15 @@
 import { Router } from 'express'
-import mongoose from 'mongoose';
 import { Movie, IMovie } from '../models/Movie'
 
 const router = Router()
+
 // CREAR: Agregar una nueva película
 const addMovie = async (newMovie: object) => {
   try {
     const movie: IMovie = new Movie(newMovie)
     return await movie.save()
   } catch (error) {
-    console.log("Error al agregar película X")
+    console.log("Error al agregar película X || ", error)
   }
 }
 
@@ -19,7 +19,7 @@ const getMovies = async () => {
     const movies = await Movie.find()
     return movies
   } catch (error) {
-    console.log("Error al buscar las películas X")
+    console.log("Error al buscar las películas X || ", error)
   }
 }
 
@@ -34,7 +34,7 @@ const getMovieById = async (id: string) => {
       console.log(movie);
     }
   } catch (error) {
-    console.log("Error al buscar la película X");
+    console.log("Error al buscar la película X || ", error);
   }
 };
 
@@ -53,5 +53,7 @@ const deleteMovie = async (id: string) => {
   const deletedMovie = await Movie.findByIdAndDelete(id);
   console.log(" Pelicúla eliminada:", deletedMovie);
 };
+
+export { addMovie, getMovies, getMovieById, updateMovieById, deleteMovie };
 
 export default router
