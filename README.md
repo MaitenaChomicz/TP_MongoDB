@@ -46,7 +46,7 @@ El modelo de película incluye los siguientes campos:
 1. Cloná el repositorio:
    ```
    git clone https://github.com/MaitenaChomicz/TP_MongoDB
-   cd tu-repo
+   cd TP_MongoDB
    ```
 2. Instalá las dependencias:
    ```
